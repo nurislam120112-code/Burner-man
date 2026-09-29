@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#087cf0">
+<meta name="description" content="NURMAT_MN — Нурмат Мирзатовдун үн жаздыруу студиясы. Онлайн ыр жаздыруу боюнча байланышып, каалооңузду айтып бериңиз.">
+<title>NURMAT_MN | Нурмат Мирзатов</title>
+
+<style>
+:root{
+  --blue:#087cf0;
+  --dark:#102849;
+  --text:#60738c;
+  --light:#f0f7ff;
+  --border:#dce8f5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{
+  margin:0;
+  background:#fff;
+  color:var(--dark);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid #0787ff;outline-offset:5px}
+.container{width:min(1120px,90%);margin:auto}
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:-1px;
+  white-space:nowrap;
+}
+.brand span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:25px}
+.nav-links>a{font-size:14px;font-weight:700}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:14px 24px;
+  border:1px solid transparent;
+  border-radius:12px;
+  background:var(--blue);
+  color:#fff;
+  font-weight:700;
+  text-align:center;
+  transition:background .2s,transform .2s;
+}
+.button:hover{background:#0665c6;transform:translateY(-2px)}
+.button.outline{
+  background:#fff;
+  color:var(--dark);
+  border-color:var(--border);
+}
+.button.outline:hover{background:var(--light)}
+.nav .button{min-height:44px;padding:10px 17px}
+.hero{
+  padding:75px 0 65px;
+  background:linear-gradient(120deg,#fff 40%,#eaf5ff);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+.eyebrow{
+  color:var(--blue);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin:0 0 20px;
+}
+h1{
+  margin:0 0 25px;
+  font-size:clamp(43px,5.8vw,72px);
+  line-height:1.1;
+  letter-spacing:-2.5px;
+}
+h1 span{color:var(--blue)}
+.lead{
+  font-size:18px;
+  line-height:1.85;
+  color:var(--text);
+  max-width:540px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.small-note{font-size:14px;color:var(--text);margin-top:22px}
+.hero-art{min-width:0}
+.logo-box{
+  background:#000;
+  border-radius:26px;
+  overflow:hidden;
+  aspect-ratio:1;
+  box-shadow:0 25px 60px #164b8520;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.logo-box img{width:100%;height:100%;object-fit:contain}
+.logo-fallback{text-align:center;padding:25px;color:white}
+.logo-fallback strong{font-size:clamp(28px,4vw,42px);letter-spacing:-1px}
+.logo-fallback strong span{color:#00adef}
+.logo-fallback p{color:#bbd5ee;font-size:15px}
+[hidden]{display:none!important}
+.sound-card{
+  position:relative;
+  margin:-30px 22px 0;
+  padding:20px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  box-shadow:0 10px 30px #1028490a;
+}
+.sound-card strong{font-size:16px}
+.sound-card small{display:block;color:var(--text);font-size:13px;margin-top:4px}
+.wave{display:flex;align-items:center;gap:4px;height:36px;flex-shrink:0}
+.wave i{width:4px;border-radius:8px;background:var(--blue)}
+.strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.strip .container{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:22px 0;
+  font-size:14px;
+  font-weight:700;
+}
+section{padding:80px 0}
+.section-head{max-width:650px;margin-bottom:35px}
+h2{
+  font-size:clamp(30px,4vw,45px);
+  line-height:1.2;
+  letter-spacing:-1px;
+  margin:0 0 18px;
+}
+.section-head p:not(.eyebrow){color:var(--text);font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  padding:30px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  background:#fff;
+}
+.card:hover{border-color:#80bdf8}
+.number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  background:var(--light);
+  color:var(--blue);
+  font-size:19px;
+  font-weight:800;
+}
+h3{font-size:21px;line-height:1.4;margin:23px 0 12px}
+.card p,.step p{color:var(--text);line-height:1.8}
+.card a{display:inline-block;margin-top:12px;color:var(--blue);font-weight:700}
+.process{background:var(--light)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:35px}
+.step{border-top:2px solid #b4d5fa;padding-top:20px}
+.step b{font-size:14px;color:var(--blue)}
+.step h3{margin-top:15px}
+.studio-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:start;
+  gap:65px;
+}
+.studio-copy p{color:var(--text);font-size:17px;line-height:1.85}
+.contact-panel{
+  padding:30px;
+  background:var(--light);
+  border:1px solid var(--border);
+  border-radius:20px;
+}
+.contact-panel h3{margin:0 0 10px}
+.contact-panel p{color:var(--text)}
+.phone{
+  display:block;
+  font-size:clamp(21px,3vw,29px);
+  font-weight:800;
+  margin:20px 0;
+}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+.order{background:linear-gradient(135deg,#eef7ff,#fff)}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:start}
+.order-copy{padding-top:15px}
+.info{
+  border-left:3px solid var(--blue);
+  padding:2px 0 2px 20px;
+  color:var(--text);
+  margin-top:30px;
+  line-height:1.8;
+}
+form{
+  padding:32px;
+  border:1px solid var(--border);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 15px 50px #16467508;
+}
+.field{margin-bottom:20px}
+label{display:block;font-size:14px;font-weight:700;margin-bottom:8px}
+input,select,textarea{
+  display:block;
+  width:100%;
+  min-width:0;
+  padding:14px;
+  border:1px solid #cbdbee;
+  border-radius:10px;
+  background:#fbfdff;
+  color:var(--dark);
+  font-size:16px;
+}
+textarea{resize:vertical;min-height:115px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .button{width:100%}
+.form-note{font-size:13px;line-height:1.7;color:var(--text);margin-bottom:0}
+#status{font-size:14px;color:#a53122}
+.faq-inner{max-width:800px;margin:auto}
+details{border-bottom:1px solid var(--border);padding:23px 0}
+summary{font-size:18px;line-height:1.5;font-weight:700;cursor:pointer}
+details p{color:var(--text);line-height:1.85;margin-bottom:0}
+footer{background:#0c2343;color:#fff;padding:38px 0}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:25px}
+footer p{font-size:14px;color:#b6c9e2;margin-bottom:0}
+footer .brand span{color:#50b6ff}
+.footer-links{display:flex;gap:20px;font-size:14px;margin-top:15px}
+@media(max-width:850px){
+  .hero-grid,.studio-grid,.order-grid{grid-template-columns:1fr;gap:32px}
+  .hero{padding:45px 0}
+  .hero-art{max-width:470px;width:100%;margin:auto}
+  .cards,.steps{grid-template-columns:1fr}
+  .steps{gap:24px}
+  .nav-links .desktop-link{display:none}
+  section{padding:58px 0}
+  h1{letter-spacing:-1.5px}
+  .strip .container{justify-content:center;flex-wrap:wrap;gap:12px 22px;font-size:13px}
+  .footer-row{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:420px){
+  .brand{font-size:22px}
+  .nav{gap:10px;min-height:72px}
+  .nav .button{font-size:13px;padding:10px 13px}
+  .row{grid-template-columns:1fr;gap:0}
+  form{padding:22px}
+  .card,.contact-panel{padding:25px}
+  .sound-card{margin:-25px 14px 0;padding:16px}
+  .sound-card strong{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Башкы бет">
+      NURMAT<span>_MN</span>
+    </a>
+    <nav class="nav-links" aria-label="Башкы меню">
+      <a class="desktop-link" href="#services">Кызматтар</a>
+      <a class="desktop-link" href="#process">Иштөө тартиби</a>
+      <a class="desktop-link" href="#contact">Байланыш</a>
+      <a class="button" href="#order">Ыр жаздыруу</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <div class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Нурмат Мирзатов · Үн жаздыруу студиясы</p>
+        <h1>Сиздин үн.<br>Сиздин сезим.<br><span>Сиздин ыр.</span></h1>
+        <p class="lead">
+          Айтылбай калган сөздөрдү ыр менен жеткириңиз.
+          Өзүңүз үчүн же жакын адамыңызга белекке —
+          ыр жаздырууну биз менен баштаңыз.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#order">Ырга заказ берүү</a>
+          <a class="button outline" href="#process">Кантип жаздырам?</a>
+        </div>
+        <p class="small-note">Онлайн байланыш · Алдын ала макулдашуу</p>
+      </div>
+
+      <div class="hero-art">
+        <div class="logo-box">
+          <img id="studioLogo" src="logo.jpg"
+               alt="NURMAT_MN үн жаздыруу студиясынын логотиби"
+               onerror="this.hidden=true;document.getElementById('logoFallback').hidden=false">
+          <div class="logo-fallback" id="logoFallback" hidden>
+            <strong>NURMAT<span>_MN</span></strong>
+            <p>ҮН ЖАЗДЫРУУ СТУДИЯСЫ</p>
+          </div>
+        </div>
+        <div class="sound-card">
+          <div>
+            <strong>Үнүңүзгө сезим кошуңуз.</strong>
+            <small>NURMAT_MN · Нурмат Мирзатов</small>
+          </div>
+          <div class="wave" aria-hidden="true">
+            <i style="height:12px"></i>
+            <i style="height:25px"></i>
+            <i style="height:36px"></i>
+            <i style="height:20px"></i>
+            <i style="height:30px"></i>
+            <i style="height:13px"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="container">
+      <span>Өз үнүңүз менен ыр</span>
+      <span>Жакындарга музыкалык белек</span>
+      <span>Онлайн байланыш</span>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Ырга айланган каалоо</p>
+        <h2>Ар бир ырдын<br>өз окуясы бар.</h2>
+        <p>
+          Кандай ыр жаздыргыңыз келет? Өзүңүзгө ылайык багытты тандап,
+          идеяңызды айтып бериңиз.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="number">01</span>
+          <h3>Өз үнүңүз менен ыр</h3>
+          <p>
+            Сүйүктүү ырыңызды өзүңүз аткаргыңыз келеби?
+            Ырды тандап, үн жаздыруунун тартибин биз менен тактаңыз.
+          </p>
+          <a href="#order" data-service="Өз үнүм менен ыр">Ушул багытты тандоо</a>
+        </article>
+
+        <article class="card">
+          <span class="number">02</span>
+          <h3>Жакын адамга белек</h3>
+          <p>
+            Апаңызга, атаңызга, сүйүктүүңүзгө же досуңузга.
+            Жүрөктөгү сөзүңүздү музыкалык белекке айландырыңыз.
+          </p>
+          <a href="#order" data-service="Жакын адамга белек">Ушул багытты тандоо</a>
+        </article>
+
+        <article class="card">
+          <span class="number">03</span>
+          <h3>Өзгөчө күнгө ыр</h3>
+          <p>
+            Той, туулган күн же маанилүү майрам.
+            Кайсы учурга ыр керек экенин айтып, даярдоо мүмкүнчүлүгүн тактаңыз.
+          </p>
+          <a href="#order" data-service="Өзгөчө күнгө ыр">Ушул багытты тандоо</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Иштөө тартиби</p>
+        <h2>Биринчи билдирүүдөн<br>даяр ырга чейин.</h2>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <b>01 / ТАЛКУУЛАЙБЫЗ</b>
+          <h3>Идеяңызды айтыңыз</h3>
+          <p>
+            Кандай ыр керек, кимге арналат жана качан даяр болушу керек?
+            Баасын, мөөнөтүн жана шарттарын алдын ала макулдашабыз.
+          </p>
+        </article>
+
+        <article class="step">
+          <b>02 / ЖАЗДЫРАБЫЗ</b>
+          <h3>Үн жаздырууга даярданабыз</h3>
+          <p>
+            Үнүңүздү кантип жаздыруу жана жөнөтүү керек экенин тактайбыз.
+            Макулдашылган тартип менен ишти баштайбыз.
+          </p>
+        </article>
+
+        <article class="step">
+          <b>03 / УГАБЫЗ</b>
+          <h3>Ырыңызды кабыл алыңыз</h3>
+          <p>
+            Даяр ырды угуп, пикириңизди билдиресиз.
+            Өзгөртүүлөр алдын ала макулдашылган шарттар боюнча жасалат.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container studio-grid">
+      <div class="studio-copy">
+        <p class="eyebrow">NURMAT_MN</p>
+        <h2>Таанышалы.<br>Нурмат Мирзатов.</h2>
+        <p>
+          Үн жаздыруу студиясы. Ыр жаздыргыңыз келсе,
+          идеяңызды WhatsApp аркылуу жөнөтүңүз.
+          Каалооңузду талкуулап, иштин тартибин чогуу тактайбыз.
+        </p>
+        <p>
+          Алгачкы жолу ыр жаздырып жатасызбы?
+          Суроолоруңузду бериңиз — эмнеден баштоо керек экенин сүйлөшөбүз.
+        </p>
+      </div>
+
+      <div class="contact-panel">
+        <h3>Түз байланыш</h3>
+        <p>Ыр жаздыруу боюнча суроолор жана алдын ала жазылуу.</p>
+        <a class="phone" href="tel:+996509202620">+996 509 202 620</a>
+        <div class="contact-actions">
+          <a class="button" href="https://wa.me/996509202620"
+             target="_blank" rel="noopener noreferrer">WhatsApp'ка жазуу</a>
+          <a class="button outline" href="tel:+996509202620">Чалуу</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order">
+    <div class="container order-grid">
+      <div class="order-copy">
+        <p class="eyebrow">Ырыңыз ушул жерден башталат</p>
+        <h2>Кандай ыр<br>жаздыргыңыз келет?</h2>
+        <p class="lead">
+          Форманы толтуруңуз. Маалыматтарыңыз даяр билдирүү болуп
+          Нурматтын WhatsApp чатына ачылат.
+        </p>
+        <div class="info">
+          Баасы жана даярдоо мөөнөтү ырдын талабына жараша такталат.
+          Форманы толтуруу төлөм жүргүзбөйт.
+        </div>
+      </div>
+
+      <form id="orderForm">
+        <div class="field">
+          <label for="customerName">Атыңыз *</label>
+          <input id="customerName" name="customerName"
+                 autocomplete="name" maxlength="80"
+                 placeholder="Атыңызды жазыңыз" required>
+        </div>
+
+        <div class="field">
+          <label for="service">Кандай ыр керек?</label>
+          <select id="service" name="service">
+            <option>Өз үнүм менен ыр</option>
+            <option>Жакын адамга белек</option>
+            <option>Өзгөчө күнгө ыр</option>
+            <option>Кеңеш алгым келет</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="recipient">Кимге арналат?</label>
+            <input id="recipient" name="recipient"
+                   maxlength="100" placeholder="Мисалы, апама">
+          </div>
+          <div class="field">
+            <label for="neededDate">Кайсы күнгө керек?</label>
+            <input id="neededDate" name="neededDate" type="date">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Ыр тууралуу каалооңуз</label>
+          <textarea id="message" name="message" maxlength="1500"
+                    placeholder="Ырдын атын, темасын же идеяңызды жазыңыз..."></textarea>
+        </div>
+
+        <button class="button" type="submit">WhatsApp'та улантуу</button>
+        <p id="status" role="status" hidden></p>
+        <p class="form-note">
+          WhatsApp ачылгандан кийин билдирүүнү текшерип,
+          «Жөнөтүү» баскычын басыңыз.
+          Ага чейин маалымат студияга жөнөтүлбөйт.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="container faq-inner">
+      <p class="eyebrow">Суроо-жооп</p>
+      <h2>Көп берилген суроолор.</h2>
+
+      <details>
+        <summary>Башка шаардан ыр жаздырсам болобу?</summary>
+        <p>
+          Онлайн ыр жаздыруу боюнча WhatsApp аркылуу кайрылыңыз.
+          Үн жаздыруунун шарттарын жана файл жөнөтүү тартибин
+          студия менен тактап аласыз.
+        </p>
+      </details>
+
+      <details>
+        <summary>Ыр жаздыруу канча турат?</summary>
+        <p>
+          Баа аткарыла турган жумушка жараша аныкталат.
+          Кандай ыр керек экенин жана даяр үнүңүз же минусуңуз
+          бар-жогун айтыңыз. Баасы иш башталганга чейин макулдашылат.
+        </p>
+      </details>
+
+      <details>
+        <summary>Үнүмдү телефонго жаздырсам болобу?</summary>
+        <p>
+          Жаздыруудан мурун студиядан көрсөтмө алыңыз.
+          Телефонуңузга жана бөлмөнүн шартына жараша
+          ылайыктуу жолун тактап аласыз.
+        </p>
+      </details>
+
+      <details>
+        <summary>Ыр канча күндө даяр болот?</summary>
+        <p>
+          Мөөнөт ырдын талабына жана студиянын иш графигине жараша
+          макулдашылат. Белгилүү бир күнгө керек болсо,
+          кайрылууда ошол датаны көрсөтүңүз.
+        </p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>
+      <a class="brand" href="#home">NURMAT<span>_MN</span></a>
+      <p>Нурмат Мирзатов · Үн жаздыруу студиясы</p>
+      <div class="footer-links">
+        <a href="https://wa.me/996509202620"
+           target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="tel:+996509202620">Телефон</a>
+      </div>
+    </div>
+    <p>© <span id="year"></span> NURMAT_MN</p>
+  </div>
+</footer>
+
+<script>
+const WHATSAPP = "996509202620";
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.querySelectorAll("[data-service]").forEach(function(link){
+  link.addEventListener("click", function(){
+    document.getElementById("service").value = link.dataset.service;
+  });
+});
+
+document.getElementById("orderForm").addEventListener("submit", function(event){
+  event.preventDefault();
+
+  const status = document.getElementById("status");
+  const nameInput = document.getElementById("customerName");
+  const name = nameInput.value.trim();
+
+  if(!name){
+    status.textContent = "Атыңызды жазыңыз.";
+    status.hidden = false;
+    nameInput.focus();
+    return;
+  }
+
+  const service = document.getElementById("service").value;
+  const recipient = document.getElementById("recipient").value.trim();
+  const rawDate = document.getElementById("neededDate").value;
+  const message = document.getElementById("message").value.trim();
+
+  let dateText = "Тактайбыз";
+  if(rawDate){
+    const parts = rawDate.split("-");
+    dateText = parts[2] + "." + parts[1] + "." + parts[0];
+  }
+
+  const text = [
+    "Саламатсызбы, Нурмат!",
+    "NURMAT_MN сайтынан ыр жаздыруу боюнча кайрылып жатам.",
+    "",
+    "Атым: " + name,
+    "Кандай ыр: " + service,
+    "Кимге арналат: " + (recipient || "Тактайбыз"),
+    "Керектүү күн: " + dateText,
+    "Каалоом: " + (message || "Кеңеш алгым келет"),
+    "",
+    "Баасын жана даярдоо мөөнөтүн айтып коёсузбу?"
+  ].join("\n");
+
+  status.hidden = true;
+
+  window.location.href =
+    "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
+});
+</script>
+</body>
+</html>
